@@ -30,8 +30,8 @@
   const response1 = createArrayWithTuple<string, number>("Bangladesh", 222);
   const resTuple = createArrayWithTuple<string, {name: string}>("Bangladesh", {name: 'Asia'});
 
-
-  const addCourseToStudent = <T>(student: T) => {
+ 
+  const addCourseToStudent = <T extends {id: number; name: string; email: string}>(student: T) => {
     const course = 'Next Level Web Development';
     return {
         ...student,
@@ -39,8 +39,14 @@
     }
   }
 
-  const student1 = addCourseToStudent({name: 'Tanvir', email: 'x@gmail.com', devType: 'NLWD'})
-  const student2 = addCourseToStudent({name: 'Akib', email: 'y@gmail.com', hasWatch: 'Apple Watch'})
+  const student1 = addCourseToStudent<{
+    id: number;
+    name: string;
+    email: string;
+    devType: string;
+}>({id: 1,name: 'Tanvir', email: 'x@gmail.com', devType: 'NLWD'})
+
+  const student2 = addCourseToStudent({id: 2, name: 'Akib', email: 'y@gmail.com', hasWatch: 'Apple Watch'})
 
 
 
