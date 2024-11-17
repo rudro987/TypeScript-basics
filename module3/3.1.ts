@@ -1,29 +1,35 @@
 {
-
     //
 
     class Animal {
-        // name: string;
-        // species: string;
-        // sound: string;
+        name: string;
+        species: string;
+        sound: string;
 
-        // parameter properties
-
-        constructor(public name: string, public species: string, public sound: string){
-            // this.name = name;
-            // this.species = species;
-            // this.sound = sound;
+        constructor(name: string, species: string, sound: string) {
+            this.name = name;
+            this.species = species;
+            this.sound = sound;
         }
 
         makeSound(){
-            console.log(`The ${this.name} says ${this.sound}`)
+            console.log(`The ${this.name} says ${this.sound}`);
         }
+
+
+
+
     }
 
-    const dog = new Animal('German Shepard', "dog", "bark");
+    const dog = new Animal("German Shepard", "Dog", "Bark");
 
-    dog.makeSound();
+    const cat = new Animal("Persian", "Cat", "Meow");
 
-    
+    cat.makeSound();
 
+
+
+
+
+    //
 }
